@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <footer class="justify-self-end">
+    {{ this }}
       <p>footer</p>
     </footer>
   `,
