@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <footer class="justify-self-end">
-    {{ this }}
+    <footer>
       <p>footer</p>
     </footer>
   `,
