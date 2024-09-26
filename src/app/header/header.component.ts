@@ -8,9 +8,9 @@ import { RouterLink } from "@angular/router";
     RouterLink
   ],
   template: `
-    <header>
+    <header class="flex justify-between">
       <h1 class="text-4xl cursor-pointer font-bold font py-4">ag.</h1>
-      <ul>
+      <ul class="flex flex-row space-x-4">
         <li routerLink="home" class="cursor-pointer hover:underline underline-offset-8">home</li>
         <li routerLink="projects" class="cursor-pointer hover:underline underline-offset-8">projects</li>
         <li routerLink="contact" class="cursor-pointer hover:underline underline-offset-8">contact</li>
