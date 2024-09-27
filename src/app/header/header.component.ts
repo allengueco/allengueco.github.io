@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
@@ -10,7 +10,11 @@ import { MenuItem } from 'primeng/api';
     RouterLink,
     MenubarModule,
   ],
-  template: `<p-menubar [model]="items" />`,
+  encapsulation: ViewEncapsulation.None,
+  template: `
+  <div class="h-screen">
+    <p-menubar [model]="items" />
+  </div>`
 })
 export class HeaderComponent {
   items: MenuItem[] = [
