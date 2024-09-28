@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -11,23 +11,25 @@ import { MenuItem } from 'primeng/api';
     MenubarModule,
   ],
   encapsulation: ViewEncapsulation.None,
-  template: `
-    <p-menubar styleClass="bg-transparent" [model]="items" />
-  `
+  templateUrl: 'header.component.html'
+
 })
 export class HeaderComponent {
   items: MenuItem[] = [
     {
       label: 'home',
       routerLink: 'home',
+      icon: PrimeIcons.HOME
     },
     {
       label: 'projects',
-      routerLink: 'projects'
+      routerLink: 'projects',
+      icon: PrimeIcons.CODE,
     },
     {
       label: 'contact',
-      routerLink: 'contact'
+      routerLink: 'contact',
+      icon: PrimeIcons.ENVELOPE
     }
   ]
 }
