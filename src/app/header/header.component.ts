@@ -12,15 +12,14 @@ import { MenuItem } from 'primeng/api';
   ],
   encapsulation: ViewEncapsulation.None,
   template: `
-  <div class="h-screen">
-    <p-menubar [model]="items" />
-  </div>`
+    <p-menubar styleClass="bg-transparent" [model]="items" />
+  `
 })
 export class HeaderComponent {
   items: MenuItem[] = [
     {
       label: 'home',
-      routerLink: 'home'
+      routerLink: 'home',
     },
     {
       label: 'projects',

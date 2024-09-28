@@ -1,5 +1,11 @@
 <div class="container flex flex-col mx-auto h-screen">
-  <app-header></app-header>
-  <router-outlet #outlet=outlet></router-outlet>
-  <app-footer></app-footer>
+  <div>
+    <app-header></app-header>
+  </div>
+  <div class="grow">
+    <router-outlet #outlet=outlet></router-outlet>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
 </div>
