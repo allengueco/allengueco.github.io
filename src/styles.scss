@@ -3,6 +3,12 @@
 
 @layer tailwind-base {
   @tailwind base;
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-weight: 400;
+    font-style: normal;
+    src: url(assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+  }
 }
 
 @layer tailwind-utilities {

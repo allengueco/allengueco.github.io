@@ -10,21 +10,15 @@ import { MenuItem, PrimeIcons } from 'primeng/api';
     RouterLink,
     MenubarModule,
   ],
-  encapsulation: ViewEncapsulation.None,
   templateUrl: 'header.component.html'
-
 })
 export class HeaderComponent {
   items: MenuItem[] = [
     {
-      label: 'home',
-      routerLink: 'home',
-      icon: PrimeIcons.HOME
-    },
-    {
       label: 'projects',
       routerLink: 'projects',
       icon: PrimeIcons.CODE,
+
     },
     {
       label: 'contact',

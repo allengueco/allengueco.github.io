@@ -5,7 +5,11 @@ export default {
     "src/**/*.{html,ts}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        code: ["JetBrains Mono"]
+      }
+    },
   },
   plugins: [],
 } satisfies Config
