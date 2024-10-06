@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem, PrimeIcons } from 'primeng/api';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { MenuItem, PrimeIcons } from 'primeng/api';
   imports: [
     RouterLink,
     MenubarModule,
+    ButtonComponent
   ],
   templateUrl: 'header.component.html'
 })
