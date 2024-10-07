@@ -1,0 +1,15 @@
+<div class="container flex flex-col">
+  @for (e of experiences; track $index) {
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <h5 class="font-serif mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{e.title}} · {{e.company}}</h5>
+      <p class="font-sans text-s font-normal text-gray-700 dark:text-gray-400">{{e.summary}}</p>
+      <div class="flex flex-wrap">
+        @for (s of e.skills; track $index) {
+          <div class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full border border-gray-300">
+            <p class="text-xs leading-none flex-initial">{{s}}</p>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
