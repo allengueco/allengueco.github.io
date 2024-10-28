@@ -1,0 +1,57 @@
+name: cicd
+
+on:
+  push:
+    branches:
+      - main
+
+  # pull_request
+  #   branches:
+  #     - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website
+          path: dist/website/browser/
+          overwrite: true
+
+  deploy:
+    name: deploy to server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: website
+          path: distfiles
+
+      - name: Deploy SCP
+        uses: appleboy/scp-action@v0.1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: distfiles/*
+          target: /var/www/allengueco.com/html
+
