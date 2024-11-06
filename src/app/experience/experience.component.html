@@ -1,9 +1,9 @@
 <div class="container flex flex-col">
   @for (e of experiences; track $index) {
-    <div class="max-w-lg p-6 bg-white border border-gray-200">
-      <h5 class="font-sans leading-snug mb-1 text-lg font-bold tracking-tight text-gray-900">{{e.title}} · {{e.company}}</h5>
-      <p class="text-slate-500">{{e.duration}}</p>
-      <p class="font-sans leading-none text-base font-normal text-gray-700">{{e.summary}}</p>
+    <div class="max-w-lg p-6 bg-lavender border border-gray-200 mb-4 rounded-lg">
+      <h5 class="font-sans leading-snug mb-1 text-xl font-bold tracking-tight text-gray-900">{{e.title}} · {{e.company}}</h5>
+      <p class="text-subtext0">{{e.duration}}</p>
+      <p class="font-sans leading-none text-lg font-normal text-gray-700">{{e.summary}}</p>
       <div class="flex flex-wrap">
         @for (skill of e.skills; track $index) {
           <div class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full border border-gray-300">
