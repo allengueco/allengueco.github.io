@@ -47,7 +47,7 @@ jobs:
           path: distfiles
 
       - name: Deploy SCP
-        uses: appleboy/scp-action@v0.1
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
