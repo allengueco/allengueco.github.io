@@ -55,5 +55,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: distfiles/*
           overwrite: true
+          strip_components: 1
           target: /var/www/allengueco.com/html
 
