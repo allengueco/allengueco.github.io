@@ -54,6 +54,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: distfiles/*
-          rm: true
+          overwrite: true
           target: /var/www/allengueco.com/html
 
