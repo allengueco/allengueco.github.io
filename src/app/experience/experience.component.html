@@ -1,9 +1,15 @@
 <div class="container flex flex-col">
   @for (e of experiences; track $index) {
     <div class="max-w-lg p-6 bg-mantle mb-4 rounded-lg shadow-lg hover:bg-overlay0/20">
-      <h5 class="font-sans leading-snug mb-1 text-xl font-bold tracking-tight text-text">{{e.title}} · {{e.company}}</h5>
+      <h5 class="font-sans leading-snug mb-1 text-xl font-bold tracking-tight text-subtext1">{{e.title}} · {{e.company}}</h5>
       <p class="text-overlay1">{{e.duration}}</p>
-      <p class="font-sans text-lg font-normal text-text">{{e.summary}}</p>
+      <div class="flex flex-wrap">
+        <ul class="list-disc list-inside">
+          @for (s of e.summary; track $index) {
+            <li class="font-sans text-lg font-normal text-text">{{ s }}</li>
+          }
+        </ul>
+      </div>
       <div class="flex flex-wrap">
         @for (skill of e.skills; track $index) {
           <div class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-blue text-mantle rounded-full border border-blue">
