@@ -6,8 +6,6 @@ import { ExperienceComponent } from '../experience/experience.component';
   standalone: true,
   imports: [ExperienceComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
