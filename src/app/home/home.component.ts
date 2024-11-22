@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ExperienceComponent } from '../experience/experience.component';
 
 @Component({
-  selector: 'website-home',
+  selector: 'app-home',
   standalone: true,
   imports: [ExperienceComponent],
   templateUrl: './home.component.html',
