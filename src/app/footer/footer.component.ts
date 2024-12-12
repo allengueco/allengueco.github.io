@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-footer',
+    imports: [],
+    template: `
     <footer>
       <p>footer</p>
     </footer>
   `,
-  styles: ``
+    styles: ``
 })
 export class FooterComponent {
 

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { Experience } from './experience.model';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [],
-  templateUrl: 'experience.component.html',
+    selector: 'app-experience',
+    imports: [],
+    templateUrl: 'experience.component.html'
 })
 export class ExperienceComponent {
   experiences: Experience[];

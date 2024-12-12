@@ -7,15 +7,14 @@ import { ExperienceComponent } from './experience/experience.component';
 import { HomeComponent } from './home/home.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HomeComponent,
-    FooterComponent,
-    ExperienceComponent,
-  ],
-  templateUrl: 'app.component.html',
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        HomeComponent,
+        FooterComponent,
+        ExperienceComponent,
+    ],
+    templateUrl: 'app.component.html'
 })
 export class AppComponent {}
