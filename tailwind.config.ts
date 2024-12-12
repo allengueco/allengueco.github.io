@@ -1,18 +1,20 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    "src/**/*.{html,ts}"
-  ],
+  content: ['src/**/*.{html,ts}'],
   theme: {
+    fontFamily: {
+      sans: ['Noto Sans'],
+    },
     extend: {
       fontFamily: {
-        code: ["JetBrains Mono"]
-      }
+        code: ['JetBrains Mono'],
+      },
     },
   },
-  plugins: [require('@catppuccin/tailwindcss')({
-    defaultFlavour: 'frappe'
-  })],
-} satisfies Config
-
+  plugins: [
+    require('@catppuccin/tailwindcss')({
+      defaultFlavour: 'frappe',
+    }),
+  ],
+} satisfies Config;
