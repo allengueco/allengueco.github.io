@@ -1,10 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ExperienceComponent } from '../experience/experience.component';
 
 @Component({
-    selector: 'app-home',
-    imports: [ExperienceComponent],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  imports: [CommonModule],
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  socials: { iconName: string; link: string }[] = [
+    {
+      iconName: 'pi-github',
+      link: 'https://github.com/allengueco',
+    },
+    {
+      iconName: 'pi-linkedin',
+      link: 'https://linkedin.com/in/allengueco',
+    },
+    {
+      iconName: 'pi-code',
+      link: 'https://stackoverflow.com/users/10374250/agueco',
+    },
+  ];
+}

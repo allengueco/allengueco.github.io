@@ -2,8 +2,15 @@
   <h1 class="antialiased font-medium text-6xl underline decoration-peach mb-2">Allen Gueco</h1>
   <p class="text-lg mt-4 text-subtext0">I'm a software developer based in Philadelphia, PA.</p>
   <p class="text-lg mt-4 text-subtext0">I am passionate about creating and designing scalable, flexible, and robust systems.</p>
+  <div class="flex">
+    @for (s of socials; track s.iconName) {
+      <a href={{s.link}}>
+        <i [ngClass]="['pi', s.iconName]" class="text-md"></i>
+      </a>
+    }
+  </div>
   <ul>
-    <li>
+    <li class="flex flex-col">
       <a>about</a>
       <a>experience</a>
       <a>projects</a>
