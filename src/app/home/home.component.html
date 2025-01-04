@@ -3,9 +3,9 @@
   <p class="text-lg mt-4 text-subtext0">I'm a software developer based in Philadelphia, PA.</p>
   <p class="text-lg mt-4 text-subtext0">I am passionate about creating and designing scalable, flexible, and robust systems.</p>
   <div class="flex">
-    @for (s of socials; track s.iconName) {
+    @for (s of socials; track s.icon) {
       <a href={{s.link}}>
-        <i [ngClass]="['pi', s.iconName]" class="text-md"></i>
+        <i class="pi {{s.icon}} text-lg"></i>
       </a>
     }
   </div>

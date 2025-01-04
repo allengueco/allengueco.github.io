@@ -8,17 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  socials: { iconName: string; link: string }[] = [
+  socials: { icon: string; link: string }[] = [
     {
-      iconName: 'pi-github',
+      icon: 'pi-github',
       link: 'https://github.com/allengueco',
     },
     {
-      iconName: 'pi-linkedin',
+      icon: 'pi-linkedin',
       link: 'https://linkedin.com/in/allengueco',
     },
     {
-      iconName: 'pi-code',
+      icon: 'pi-code',
       link: 'https://stackoverflow.com/users/10374250/agueco',
     },
   ];
