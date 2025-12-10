@@ -9,7 +9,6 @@ jobs:
   deploy:
     name: deploy to server
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Trigger Dokploy deploy
         run: |
