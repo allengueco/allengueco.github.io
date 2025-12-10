@@ -5,56 +5,13 @@ on:
     branches:
       - main
 
-  # pull_request
-  #   branches:
-  #     - main
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22]
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: website
-          path: dist/website/browser/
-          overwrite: true
-
   deploy:
     name: deploy to server
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: website
-          path: distfiles
-
-      - name: Deploy SCP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          source: distfiles/*
-          overwrite: true
-          strip_components: 1
-          target: /var/www/allengueco.com/html
+      - name: Trigger Dokploy deploy
+        run: |
+          curl -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
 
