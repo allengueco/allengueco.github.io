@@ -18,5 +18,8 @@ jobs:
           tags: tag:ci
       - name: Trigger Dokploy deploy
         run: |
-          curl -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
+          curl -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}" \
+            -H "x-gitlab-event: Push Hook" \
+            -H "Content-Type: application/json" \
+            -d '{"ref": "refs/heads/main"}'
 
