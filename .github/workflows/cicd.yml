@@ -10,7 +10,7 @@ jobs:
     name: deploy to server
     runs-on: ubuntu-latest
     steps:
-      - name: Tailscale
+      - name: Authenticate to Tailscale
         uses: tailscale/github-action@v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
