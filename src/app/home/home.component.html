@@ -19,7 +19,7 @@
   </ul>
   <div class="bottom flex">
     @for (s of socials; track s.icon) {
-      <a href={{s.link}}>
+      <a [href]="s.link">
         <i class="pi {{s.icon}}"></i>
       </a>
     }
